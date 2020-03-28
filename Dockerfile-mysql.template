@@ -1,0 +1,6 @@
+FROM 3slab/superset:##RELEASE##
+
+USER root
+RUN cd /app \
+    && pip install mysqlclient
+USER superset
