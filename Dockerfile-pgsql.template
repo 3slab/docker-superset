@@ -1,4 +1,4 @@
-FROM 3slab/superset:##RELEASE##
+FROM apache/superset:##RELEASE##
 
 USER root
 RUN cd /app \
