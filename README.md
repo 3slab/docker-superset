@@ -18,6 +18,6 @@ Then build the version you want to push :
 
 It builds the following image :
 
-* [A lean image based on official Dockerfile](https://github.com/apache/incubator-superset/blob/master/Dockerfile)
 * [An image with a Mysql connector](./Dockerfile-mysql.template)
 * [An image with a PostgreSQL connector](./Dockerfile-pgsql.template)
+* [An image with a Mongobi connector](./Dockerfile-mongobi.template)

@@ -17,3 +17,7 @@ docker push 3slab/superset:$SUPERSET_TAG-mysql
 sed "s/##RELEASE##/$SUPERSET_TAG/" Dockerfile-pgsql.template > Dockerfile
 docker build -t 3slab/superset:$SUPERSET_TAG-pgsql .
 docker push 3slab/superset:$SUPERSET_TAG-pgsql
+
+sed "s/##RELEASE##/$SUPERSET_TAG/" Dockerfile-mongobi.template > Dockerfile
+docker build -t 3slab/superset:$SUPERSET_TAG-mongobi .
+docker push 3slab/superset:$SUPERSET_TAG-mongobi

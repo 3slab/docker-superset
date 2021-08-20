@@ -1,0 +1,14 @@
+
+FROM apache/superset:##RELEASE##
+
+USER root
+
+RUN pip install mysqlclient \
+    && pip install sqlalchemy-mongobi \
+    && pip install psycopg2
+
+USER superset
+
+ENV LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN=1
+
+RUN sed -i -z 's/        # Commit the connection so CTA queries will create the table.\n        conn.commit()/        # SSM_MONBI\n        # Commit the connection so CTA queries will create the table.\n        # conn.commit()/g' /app/superset/sql_lab.py
